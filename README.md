@@ -13,7 +13,8 @@ Here we go!
 ![](ReadMe_Files/overview.jpg)
 The entry point for our client is the API Gateway, which exposes our backend to a public URL and utilizes HTTPs methods to call our functions.  Each of the Gateway's publicly exposed HTTP endpoints (PUT, PATCH, POST, DELETE, and GET) trigger their own Lambda function to perform their designated operations on the database.  Specific IAM permissions are nessiccary for the Lambda functions to operate on the database, this is becuase resources on AWS operate on a 'whitelist' security model.
 \
-the POST method expects a body payload in JSON like this: \
+the POST method expects a body payload in JSON like this: 
+
 
 ```json
 {
