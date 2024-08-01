@@ -128,3 +128,20 @@ and the other GET will return all of the objects in the database (/pets)
  it should look like this, and now we can set up our methods
 \
 ![](ReadMe_Files/gateway4.jpg)
+\
+Well start in the /pet resourse and click 'Create Method'
+\
+Here we make the POST method, turn on proxy integration, and reference the Lambda Function we made earlier "_petshop-post"
+\
+![](ReadMe_Files/gateway5.jpg)
+\
+Create the Methods for all of the Lambdas that were made
+\
+
+| API METHOD        | Corisponding Lambda                                                |
+| ----------------- | ------------------------------------------------------------------ |
+| ![](https://via.placeholder.com/10/00b48a?text=+) /pet POST  |  _petshop-post |
+| ![](https://via.placeholder.com/10/00b48a?text=+) /pet PATCH | _petshop-update-pet |
+| ![](https://via.placeholder.com/10/00b48a?text=+) /pet DELETE | _petshop-delete-pet  |
+| ![](https://via.placeholder.com/10/00b48a?text=+) /pet GET  | _petshop-get-pet |
+| ![](https://via.placeholder.com/10/FFFF00?text=+) /pets GET | _petshop-get-all-pets |
