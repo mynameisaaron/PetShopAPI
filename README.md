@@ -104,3 +104,27 @@ def lambda_handler(event, context):
     }
 ```
 Ofcourse you will need to repeat this process for all five of the lambda functions that are found in the Lambda_Functions folder of this git depository.  To access the database, all of the lambdas should be givin the same IAM role ('_PetShopAPI-Lambda-Role')
+
+## API GATEWAY (and done.)
+Our API Gateway will securly expose our five Lambda functions to a public URL voila we have a Serverless CRUD API. \ 
+The AWS API Gateway service is a config of 'Resources' and HTTP 'Methods' that will reference our Lambda Functions \
+![](ReadMe_Files/gateway1.jpg)
+In the AWS Console, Find the API Gateway service and create a 'REST API' and give it a name with a 'Regional Endpoint'
+![](ReadMe_Files/gateway2.jpg) \
+Once created, your looking at a configuration of 'Resources' and 'Methods'
+\
+
+\
+Create two resources: /pet & /pets
+
+
+\
+This is becuause we will have two GET methods exposed:
+\
+one to find a single Object on the table (/pet)
+\
+and the other GET will return all of the objects in the database (/pets)
+
+ it should look like this, and now we can set up our methods
+\
+![](ReadMe_Files/gateway4.jpg)
