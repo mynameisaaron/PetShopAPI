@@ -136,12 +136,22 @@ Here we make the POST method, turn on proxy integration, and reference the Lambd
 ![](ReadMe_Files/gateway5.jpg)
 \
 Create the Methods for all of the Lambdas that were made
-\
 
-| API METHOD        | Corisponding Lambda                                                |
+
+| API METHOD        | Corresponding Lambda                                                |
 | ----------------- | ------------------------------------------------------------------ |
 | ![](https://via.placeholder.com/10/00b48a?text=+) /pet POST  |  _petshop-post |
 | ![](https://via.placeholder.com/10/00b48a?text=+) /pet PATCH | _petshop-update-pet |
 | ![](https://via.placeholder.com/10/00b48a?text=+) /pet DELETE | _petshop-delete-pet  |
 | ![](https://via.placeholder.com/10/00b48a?text=+) /pet GET  | _petshop-get-pet |
 | ![](https://via.placeholder.com/10/FFFF00?text=+) /pets GET | _petshop-get-all-pets |
+
+Your table of methods should look like this, you can now click on Deploy API (and you can set it at the 'prod' stage)
+
+![](ReadMe_Files/gateway6.jpg)
+\
+In the stages setction you can now see your API is exposed to a public URL, and your serverless PetShop CRUD API is ready to serve.
+![](ReadMe_Files/gateway7.jpg)
+
+
+
