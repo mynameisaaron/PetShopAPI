@@ -25,5 +25,36 @@ the POST method expects a body payload in JSON like this:
         "gender": "male",
         "birthday": "08-08-2008"
 }
+```
+## Deployment
+We'll start with the database, and move from right to left setting up what is in the diagram. \
+From the AWS console, open DynamoDB and create a table ("PetShopAPI") and use the string "id" as the Partition Key, and create the table.
+![](ReadMe_Files/Dynamodb1.jpg)
+![](ReadMe_Files/createtable.png)
+\
+moving on, before we set up our Lambda Functions, lets create an IAM role with permission to access the new database.\
+![](ReadMe_Files/permission.png)
+the custom permission string would look like this, with your own database ARN used in the Resource attribute.
+```json
+{
+  "Version": "2024-08-18",
+  "Statement": [
+    {
+      "Sid": "DynamoDBTableAccess",
+      "Effect": "Allow",
+      "Action": [
+        "dynamodb:DeleteItem",
+        "dynamodb:GetItem",
+        "dynamodb:PutItem",
+        "dynamodb:Query",
+        "dynamodb:Scan",
+        "dynamodb:UpdateItem"
+      ],
+      "Resource": "<YOUR TABLE'S ARN GOES HERE>"
+    }
+  ]
+}
+```
 
-
+Alternatviely, and much easier when using the AWS console, assign the template permission called "AmazonDynamoDBFullAccess"
+![](ReadMe_Files/permission1.jpg)
